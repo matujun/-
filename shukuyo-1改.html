@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宿曜：角宿（かくしゅく）</title>
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: #5a3d2b;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff9e6;
+        }
+        h1 {
+            color: #d35400;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .fortune-types {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .fortune-type {
+            background-color: #f39c12;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+        .fortune-type:hover, .fortune-type.active {
+            background-color: #d35400;
+        }
+        .fortune-content {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .jobs {
+            background-color: #fdf2e9;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        .jobs h3 {
+            color: #d35400;
+            margin-top: 0;
+        }
+        .jobs ul {
+            columns: 2;
+            -webkit-columns: 2;
+            -moz-columns: 2;
+        }
+        .money-methods {
+            display: flex;
+            justify-content: space-between;
+        }
+        .money-up, .money-down {
+            width: 48%;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .money-up {
+            background-color: #e8f6f3;
+        }
+        .money-down {
+            background-color: #fdedec;
+        }
+        .money-up h3, .money-down h3 {
+            color: #d35400;
+            margin-top: 0;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>角宿（かくしゅく）</h1>
+
+    <div class="fortune-types">
+        <button class="fortune-type" onclick="showFortune('general', event)">🌟 総合運</button>
+        <button class="fortune-type" onclick="showFortune('love', event)">❤️ 恋愛運</button>
+        <button class="fortune-type" onclick="showFortune('work', event)">💼 仕事運</button>
+        <button class="fortune-type" onclick="showFortune('money', event)">💰 金運</button>
+    </div>
+
+    <div id="fortune-content" class="fortune-content">
+        <div id="general">
+            <h2>総合運</h2>
+            <p>角宿の方は、新しいことを始めるのが得意です。冒険心とリーダーシップがあなたの魅力です。アイデアが豊富で、周りの人を引っ張っていく力があります。ただし、時々せっかちになることもあるので注意が必要です。落ち着いて考える時間を持つことも大切です。変化を恐れない勇気が、あなたの人生を豊かにしてくれるでしょう。</p>
+        </div>
+
+        <div id="love" style="display:none;">
+            <h2>恋愛運</h2>
+            <p>恋愛面では、情熱的な角宿の方は新しい出会いに積極的です。行動力があるあなたは、相手の心をつかむことができるでしょう。ただし、熱くなりすぎて相手を驚かせてしまうこともあるので、相手のペースも大切にしましょう。お互いを尊重しながら、素敵な関係を築いていけるはずです。</p>
+        </div>
+
+        <div id="work" style="display:none;">
+            <h2>仕事運</h2>
+            <p>仕事面では、角宿の方の創造力とリーダーシップが光ります。新しいプロジェクトを始めたり、革新的なアイデアを出したりするのが得意です。チームのムードメーカーとしても活躍できるでしょう。ただし、時には周りとの意見の相違もあるかもしれません。チームメンバーの意見にも耳を傾け、協調性を大切にすることで、より大きな成果を上げられるでしょう。</p>
+            
+            <div class="jobs">
+                <h3>向いている職業</h3>
+                <ul>
+                    <li>グラフィックデザイナー</li>
+                    <li>不動産営業</li>
+                    <li>ソーシャルメディアマネージャー</li>
+                    <li>シェフ</li>
+                    <li>イベントプランナー</li>
+                    <li>マーケティング担当</li>
+                    <li>営業職</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="money" style="display:none;">
+            <h2>金運</h2>
+            <p>角宿の方の金運は、冒険心と創造力に影響されます。新しいビジネスチャンスを見つける才能があるため、思わぬところでラッキーな機会に恵まれるかもしれません。ただし、衝動的な決断には注意が必要です。じっくり考えてから行動することで、より安定した金運を得られるでしょう。</p>
+            
+            <div class="money-methods">
+                <div class="money-up">
+                    <h3>金運アップの方法</h3>
+                    <ul>
+                        <li>毎月の貯金を習慣化する</li>
+                        <li>金融リテラシーを高める</li>
+                        <li>家計簿をつけて支出を管理する</li>
+                        <li>具体的な貯金目標を立てる</li>
+                        <li>副業や投資を検討する</li>
+                    </ul>
+                </div>
+                
+                <div class="money-down">
+                    <h3>金運ダウンの要因</h3>
+                    <ul>
+                        <li>衝動買いを控える</li>
+                        <li>ギャンブルや投機的な投資を避ける</li>
+                        <li>クレジットカードの使いすぎに注意</li>
+                        <li>不必要な外食を減らす</li>
+                        <li>安易な保証人にならない</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFortune(type, event) {
+            document.querySelectorAll('#fortune-content > div').forEach(div => {
+                div.style.display = 'none';
+            });
+            document.getElementById(type).style.display = 'block';
+            document.querySelectorAll('.fortune-type').forEach(button => {
+                button.classList.remove('active');
+            });
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
+        }
+        showFortune('general');
+    </script>
+</body>
+</html>
